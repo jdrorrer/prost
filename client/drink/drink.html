@@ -1,0 +1,53 @@
+<template name="drink">
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton}}
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Drink Details</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear" data-ion-popover="_myPopover">
+      {{#if isAndroid}}
+        {{> ionIcon icon='android-more-vertical'}}
+      {{else}}
+        {{> ionIcon icon='more'}}
+      {{/if}}
+    </button>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+      <div class="list card">
+
+        <div class="item item-avatar">
+          <img src="/images/bar-1.jpg" alt="bar-1">
+          <h2>{{name}}</h2>
+          <p>${{price}}</p>
+        </div>
+
+        <div class="item item-body">
+          <img src="/images/drink-5.jpg" alt="drink-5" class="full-image"/>
+          <!-- <h2>{{name}}</h2> -->
+          <p>{{description}}</p>
+        </div>
+
+        <div class="item tabs tabs-secondary tabs-icon-left">
+          <a class="tab-item" href="{{pathFor 'drinks' _id=this._id}}">
+            <i class="icon ion-social-usd-outline"></i>
+            Buy Drink
+          </a>
+          <a class="tab-item" href="#">
+            <i class="icon ion-ios-star-outline"></i>
+            Save to Favorites
+          </a>
+          <a class="tab-item" href="#">
+            <i class="icon ion-ios-upload-outline"></i>
+            Share
+          </a>
+        </div>
+      </div>
+    {{/ionContent}}
+  {{/ionView}}
+</template>

@@ -1,0 +1,3 @@
+Template.drink.onCreated(function() {
+  
+});

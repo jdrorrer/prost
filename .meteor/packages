@@ -1,0 +1,30 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-platform
+meteoric:ionic
+iron:router
+fourseven:scss
+meteoric:ionicons-sass
+fastclick
+aldeed:autoform
+meteorhacks:kadira
+reactive-var
+reactive-dict
+spiderable
+meteorhacks:npm
+
+
+npm-container
+meteorhacks:async
+accounts-password
+msavin:mongol
+accounts-ui-unstyled
+sanjo:jasmine
+velocity:html-reporter
+meteoric:ionic-sass
+underscorestring:underscore.string
+dburles:google-maps

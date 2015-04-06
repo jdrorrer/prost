@@ -1,0 +1,15 @@
+<template name="layout">
+  <div id="wrapper">
+    <!-- {{> nav}} -->
+    <div id="content">
+      {{#ionBody}}
+        {{> ionNavBar}}
+        
+        {{#ionNavView}}
+          {{> yield}}
+        {{/ionNavView}}
+      {{/ionBody}}
+    </div>
+<!--     {{> footer}} -->
+  </div>
+</template>

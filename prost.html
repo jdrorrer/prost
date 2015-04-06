@@ -1,0 +1,13 @@
+<template name="home">
+  {{#ionContent}}
+    <h1>Welcome to Meteor!</h1>
+    <div id="container">
+      {{> hello}}
+    </div> 
+  {{/ionContent}}
+</template>
+
+<template name="hello">
+  <button class="button button-positive">Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>

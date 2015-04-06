@@ -1,0 +1,9 @@
+/* Import Ionic Sass */
+@import '.meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/ionic';
+
+/* Import Ionic Icons */
+@import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/ionicons';
+
+@import 'client/stores/stores.scss';
+@import 'client/store/store.scss';
+@import 'client/map/map.scss';
