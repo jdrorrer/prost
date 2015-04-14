@@ -1,0 +1,12 @@
+.tabs-top.tabs-striped {
+  margin-bottom: -50px;
+
+  .tab-item {
+    font-size: $base-fs;
+    line-height: $base-lh;
+    padding-top: 10px;
+    &.active {
+      padding-top: 10px;
+    }
+  } 
+}

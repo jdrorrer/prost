@@ -1,0 +1,219 @@
+<template name="beer">
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton}}
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Beer Selection</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear" data-ion-popover="_myPopover">
+      {{#if isAndroid}}
+        {{> ionIcon icon='android-more-vertical'}}
+      {{else}}
+        {{> ionIcon icon='more'}}
+      {{/if}}
+    </button>
+  {{/contentFor}}
+
+  {{> drinksTabs}}
+
+  {{#ionView class="top-tabs-view"}}
+    {{#ionContent}}
+      <div class="container">
+        <div class="row list">
+          <div class="item item-divider item-drink-divider">
+            Ales
+          </div>
+        </div>
+
+        <div class="row responsive-md">
+          <div class="col col-25">
+            <div class="list card">
+
+              <div class="item item-avatar">
+                <img src="images/drink-1.jpg">
+                <h2>American Ale</h2>
+                <p>Nine Inch Nails</p>
+              </div>
+
+              <div class="item item-image">
+                <img src="images/drink-1.jpg">
+              </div>
+
+              <a class="item item-icon-left" href="#">
+                <i class="icon ion-ios-pint-outline"></i>
+                Browse American Ale Selection
+              </a>
+
+            </div>
+          </div>
+
+
+          <div class="col col-25">
+            <div class="list card">
+
+              <div class="item item-avatar">
+                <img src="images/drink-2.jpg">
+                <h2>English Pale Ale</h2>
+                <p>Nine Inch Nails</p>
+              </div>
+
+              <div class="item item-image">
+                <img src="images/drink-2.jpg">
+              </div>
+
+              <a class="item item-icon-left" href="#">
+                <i class="icon ion-ios-pint-outline"></i>
+                Browse English Pale Ale Selection
+              </a>
+
+            </div>
+          </div>
+
+          <div class="col col-25">
+            <div class="list card">
+
+              <div class="item item-avatar">
+                <img src="images/drink-3.jpg">
+                <h2>Stout</h2>
+                <p>Nine Inch Nails</p>
+              </div>
+
+              <div class="item item-image">
+                <img src="images/drink-3.jpg">
+              </div>
+
+              <a class="item item-icon-left" href="#">
+                <i class="icon ion-ios-pint-outline"></i>
+                Browse Stout Selection
+              </a>
+
+            </div>
+          </div>
+
+          <div class="col col-25">
+            <div class="list card">
+
+              <div class="item item-avatar">
+                <img src="images/drink-4.jpg">
+                <h2>Porter</h2>
+                <p>Nine Inch Nails</p>
+              </div>
+
+              <div class="item item-image">
+                <img src="images/drink-4.jpg">
+              </div>
+
+              <a class="item item-icon-left" href="#">
+                <i class="icon ion-ios-pint-outline"></i>
+                Browse Porter Selection
+              </a>
+
+            </div>
+          </div>
+        </div>
+        
+        <div class="row list">
+          <div class="item item-divider item-drink-divider">
+            Lagers
+          </div>
+        </div>
+
+        <div class="row responsive-md">
+
+          <div class="col col-25">
+            <div class="list card">
+
+              <div class="item item-avatar">
+                <img src="images/drink-5.jpg">
+                <h2>Light Lager</h2>
+                <p>Nine Inch Nails</p>
+              </div>
+
+              <div class="item item-image">
+                <img src="images/drink-5.jpg">
+              </div>
+
+              <a class="item item-icon-left" href="#">
+                <i class="icon ion-ios-pint-outline"></i>
+                Browse Light Lager Selection
+              </a>
+
+            </div>
+          </div>
+
+          <div class="col col-25">
+            <div class="list card">
+
+              <div class="item item-avatar">
+                <img src="images/drink-6.jpg">
+                <h2>Pilsner</h2>
+                <p>Nine Inch Nails</p>
+              </div>
+
+              <div class="item item-image">
+                <img src="images/drink-6.jpg">
+              </div>
+
+              <a class="item item-icon-left" href="#">
+                <i class="icon ion-ios-pint-outline"></i>
+                Browse Pilsner Selection
+              </a>
+
+            </div>
+          </div>
+
+          <div class="col col-25">
+            <div class="list card">
+
+              <div class="item item-avatar">
+                <img src="images/drink-7.jpg">
+                <h2>European Amber Lager</h2>
+                <p>Nine Inch Nails</p>
+              </div>
+
+              <div class="item item-image">
+                <img src="images/drink-7.jpg">
+              </div>
+
+              <a class="item item-icon-left" href="#">
+                <i class="icon ion-ios-pint-outline"></i>
+                Browse Amber Lager Selection
+              </a>
+
+            </div>
+          </div>
+
+          <div class="col col-25">
+            <div class="list card">
+
+              <div class="item item-avatar">
+                <img src="images/bar-1.jpg">
+                <h2>Bock</h2>
+                <p>Nine Inch Nails</p>
+              </div>
+
+              <div class="item item-image">
+                <img src="images/bar-1.jpg">
+              </div>
+
+              <a class="item item-icon-left" href="#">
+                <i class="icon ion-ios-pint-outline"></i>
+                Browse Bock Selection
+              </a>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="row list">
+          <div class="item item-divider">
+            Ales
+          </div>
+        </div>
+      </div>
+    {{/ionContent}}
+  {{/ionView}}
+</template> 

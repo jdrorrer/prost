@@ -1,0 +1,52 @@
+<template name="allDrinks">
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton}}
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Browse Drinks</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear" data-ion-popover="_myPopover">
+      {{#if isAndroid}}
+        {{> ionIcon icon='android-more-vertical'}}
+      {{else}}
+        {{> ionIcon icon='more'}}
+      {{/if}}
+    </button>
+  {{/contentFor}}
+
+  {{> drinksTabs}}
+
+  {{#ionView}}
+    {{#ionContent}}
+      <div class="container">
+        <div class="row responsive-sm">
+          <div class="col col-50">
+            <h2 class="at-sep menu-category">Beer</h2>
+            <div class="item item-body">
+              <img src="/images/drink-3.jpg" alt="bar-2" class="full-image"/>
+            </div>
+          </div>
+
+          <div class="col col-50">
+            <h2 class="at-sep menu-category">Wine</h2>
+            <div class="item item-body">
+              <img src="/images/drink-2.jpg" alt="bar-2" class="full-image"/>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row responsive-sm">
+          <div class="col col-50">
+            <h2 class="at-sep menu-category">Mixes</h2>
+            <div class="item item-body">
+              <img src="/images/drink-1.jpg" alt="bar-2" class="full-image"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    {{/ionContent}}
+  {{/ionView}}
+</template> 

@@ -1,0 +1,73 @@
+<template name="home">
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton}}
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Prost</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear" data-ion-popover="_myPopover">
+      {{#if isAndroid}}
+        {{> ionIcon icon='android-more-vertical'}}
+      {{else}}
+        {{> ionIcon icon='more'}}
+      {{/if}}
+    </button>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+      <div class="item-input-inset center">
+        <label class="item-input-wrapper">
+          <i class="icon ion-ios-search placeholder-icon"></i>
+          <input type="search" placeholder="Search Drinks">
+        </label>
+      </div>
+
+      <div class="container">
+        <div class="row responsive-sm">
+          <div class="col col-50">
+            <h2 class="at-sep menu-category">Favorites</h2>
+            <div class="item item-body drink-image">
+              <img src="/images/drink-1.jpg" alt="bar-2" class="full-image"/>
+            </div>
+          </div>
+
+          <div class="col col-50">
+            <h2 class="at-sep menu-category">Specials</h2>
+            <div class="item item-body drink-image">
+              <img src="/images/drink-2.jpg" alt="bar-2" class="full-image"/>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row responsive-sm">
+          <div class="col col-50">
+            <h2 class="at-sep menu-category">New</h2>
+            <div class="item item-body drink-image">
+              <img src="/images/drink-3.jpg" alt="bar-2" class="full-image"/>
+            </div>
+          </div>
+
+          <div class="col col-50">
+            <h2 class="at-sep menu-category">Popular</h2>
+            <div class="item item-body drink-image">
+              <img src="/images/drink-4.jpg" alt="bar-2" class="full-image"/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form action="{{pathFor 'beer'}}">
+        <button class="button button-block browse-drinks">
+          <!-- <a href="{{pathFor 'allDrinks'}}" class="allDrinks"> -->
+            <i class="icon ion-ios-list-outline placeholder-icon"></i>
+            Browse All Drinks
+          <!-- </a> -->
+        </button>
+      </form>
+    {{/ionContent}}
+  {{/ionView}}
+</template> 

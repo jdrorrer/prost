@@ -1,0 +1,15 @@
+<template name="drinksTabs">
+  {{#if isAndroid}}
+    {{#ionTabs style="android" class="tabs-top tabs-background-positive tabs-color-light"}}
+      {{> ionTab title="Beer" path="beer"}}
+      {{> ionTab title="Wine" path="wine"}}
+      {{> ionTab title="Mixes" path="mixes"}}
+    {{/ionTabs}}
+  {{else}}
+    {{#ionTabs style="ios" class="tabs-top tabs-striped"}}
+      {{> ionTab title="Beer" path="beer"}}
+      {{> ionTab title="Wine" path="wine"}}
+      {{> ionTab title="Mixes" path="mixes"}}
+    {{/ionTabs}}
+  {{/if}}
+</template>

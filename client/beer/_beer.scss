@@ -1,0 +1,15 @@
+.list:last-child.card {
+  margin-bottom: 0px;
+  @include respond-min(mid) {
+    margin-bottom: 40px;
+  }
+}
+
+.top-tabs-view {
+  top: 50px;
+}
+
+.item-drink-divider {
+  text-align: center;
+  width: 100%;
+}

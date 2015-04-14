@@ -19,15 +19,22 @@
 
   {{#ionView}}
     {{#ionContent}}
+      <div class="item-input-inset center">
+        <label class="item-input-wrapper">
+          <i class="icon ion-ios-search placeholder-icon"></i>
+          <input type="search" placeholder="Search Drinks">
+        </label>
+      </div>
       {{#ionList}}
         {{#each drink}}
-            {{#ionItem path="drink" data=myParams iconRight=true class="item-avatar"}}
-              <img src="/images/drink-5.jpg" alt="drink-5" class="avatar"/>
-              <h2>{{name}} ${{price}}</h2>
-              <p>{{description}}</p>
-              {{>ionIcon icon="ios-arrow-right"}}
-            {{/ionItem}}
-          {{/each}}
+          {{#ionItem path="drink" data=myParams iconRight=true avatar=true}}
+            <img src="/images/drink-5.jpg" alt="drink-5"/>
+            <h2>{{name}} ${{price}}</h2>
+            <p>{{description}}</p>
+            {{>ionIcon icon="ios-arrow-right"}}
+          {{/ionItem}}
+        {{/each}}
+        <button class="load-more">Load More</button>
       {{/ionList}}
     {{/ionContent}}
   {{/ionView}}

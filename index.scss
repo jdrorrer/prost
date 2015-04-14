@@ -1,9 +1,48 @@
+/*******************************************************
+// Google Fonts
+*******************************************************/
+@import url(http://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans:400italic,400,300,700,800);
+
+/*******************************************************
+// Ionic 
+*******************************************************/
 /* Import Ionic Sass */
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/ionic';
 
 /* Import Ionic Icons */
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/ionicons';
 
+/*******************************************************
+// Sass Features
+*******************************************************/
+@import "client/styles/variables.scss";
+@import "client/styles/functions.scss";
+@import "client/styles/mixins.scss";
+
+
+/*******************************************************
+// The Styles
+*******************************************************/
+// Base styles
+@import "client/styles/common/base.scss";
+
+/*******************************************************
+// Layout Elements
+*******************************************************/
+// - Layout = major components, e.g., header, footer etc.
+// - Module = minor components, e.g., navigation bar, callout, widgets etc.
+// - State  = a state is something that augments + overrides all other styles, e.g., success or error state
+@import "client/layout/layout.scss"; 
+
+// Modules
+@import 'client/home/home.scss';
 @import 'client/stores/stores.scss';
 @import 'client/store/store.scss';
 @import 'client/map/map.scss';
+@import 'client/accounts/accounts.scss';
+@import 'client/drinksTabs/drinksTabs.scss';
+@import 'client/beer/beer.scss';
+// @import 'client/searchOverlay/searchOverlay.scss';
+
+// State
+@import "client/styles/components/state.scss";

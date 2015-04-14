@@ -1,15 +1,18 @@
 <template name="layout">
-  <div id="wrapper">
-    <!-- {{> nav}} -->
-    <div id="content">
-      {{#ionBody}}
-        {{> ionNavBar}}
-        
-        {{#ionNavView}}
-          {{> yield}}
-        {{/ionNavView}}
-      {{/ionBody}}
+  <div class="search-overlay-container">
+    <div id="wrapper">
+      <!-- {{> nav}} -->
+      <div id="content">
+        {{#ionBody}}
+          {{> ionNavBar}}
+          
+          {{#ionNavView}}
+            {{> yield}}
+            {{> tabs}}
+          {{/ionNavView}}
+        {{/ionBody}}
+      </div>
+  <!--     {{> footer}} -->
     </div>
-<!--     {{> footer}} -->
   </div>
 </template>

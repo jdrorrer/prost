@@ -72,8 +72,8 @@ Meteor.startup(function() {
   //   }
   // });
   
-  Meteor.publish('allDrinks', function () {
-    return Drinks.find({}, { limit: 10 });
+  Meteor.publish('allDrinks', function (limit) {
+    return Drinks.find({}, { limit: limit });
   });
 
   if (Drinks.find().count() === 0) {

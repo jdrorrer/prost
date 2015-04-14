@@ -22,9 +22,13 @@ npm-container
 meteorhacks:async
 accounts-password
 msavin:mongol
-accounts-ui-unstyled
 sanjo:jasmine
-velocity:html-reporter
 meteoric:ionic-sass
 underscorestring:underscore.string
 dburles:google-maps
+useraccounts:ionic
+accounts-twitter
+accounts-google
+accounts-ui
+accounts-facebook
+percolate:paginated-subscription

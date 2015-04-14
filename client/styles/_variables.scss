@@ -1,0 +1,55 @@
+/*******************************************************
+// Variables
+*******************************************************/
+
+// Color Scheme
+// =============
+$primary-color: #AC6C82; // light purple
+$secondary-color: #FFAA5C; // bright orange
+$tertiary-color: #455C7B; // navy blue
+$quaternary-color: #685C79; // dark purple
+$quinary-color: #DA727E; // pinky purple
+$font-color: #27272b;
+
+
+// Base Sizes
+// ==========
+
+// Included shorthands as these may be used a lot.
+$font-size-base: 16px;
+$line-height-base: 1.5;
+$base-fs: $font-size-base;
+$base-lh: $line-height-base;
+
+
+// Font Stacks
+// ===========
+
+$primary-fonts: 'Open Sans', sans-serif;
+$secondary-fonts: 'Grand Hotel', serif;
+$logo-font: 'Grand Hotel', cursive;
+
+
+// Font Weights
+// ============
+
+$font-thin: 100;
+$font-light: 300;
+$font-normal: 400;
+$font-bold: 700;
+
+
+// Breakpoints
+// ===========
+
+$breakpoint-extra-small: 28em;
+$breakpoint-narrow: 568px; // about 36em
+$breakpoint-mid: 48em;
+$breakpoint-wide: 60em;
+$breakpoint-huge: 100em;
+
+$bp-xs: $breakpoint-extra-small;
+$bp-narrow: $breakpoint-narrow;
+$bp-mid: $breakpoint-mid;
+$bp-wide: $breakpoint-wide;
+$bp-huge: $breakpoint-huge;

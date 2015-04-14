@@ -1,0 +1,147 @@
+/* Overlay style */
+.search-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(153,204,51,0.9);
+}
+
+/* Overlay closing cross */
+.search-overlay .overlay-close {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  overflow: hidden;
+  border: none;
+  background: url(/images/cross.png) no-repeat center center;
+  text-indent: 200%;
+  color: transparent;
+  outline: none;
+  z-index: 100;
+}
+
+.overlay-close:hover {
+  cursor: pointer;
+}
+
+/* Menu style */
+.search-overlay nav {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  height: 60%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.search-overlay ul input[type="text"] {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
+  height: 100%;
+  position: relative;
+}
+
+.search-overlay ul li input[type="text"] {
+  display: block;
+  height: 20%;
+  height: calc(100% / 5);
+  min-height: 54px;
+}
+
+.search-overlay ul li a input[type="text"] {
+  background: transparent;
+  font-size: 54px;
+  font-weight: 300;
+  display: block;
+  color: #fff;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+.search {
+  font-size: 34px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  color: white;
+}
+
+.search:focus {
+  outline: none;
+}
+
+.search::-webkit-input-placeholder {
+   color: rgba(255,255,255,0.8);
+}
+
+.search:-moz-placeholder { /* Firefox 18- */
+   color: rgba(255,255,255,0.8); 
+}
+
+.search::-moz-placeholder {  /* Firefox 19+ */
+   color: rgba(255,255,255,0.8);
+}
+
+.search:-ms-input-placeholder {  
+   color: rgba(255,255,255,0.8); 
+}
+
+
+.search-overlay ul li a:hover,
+.search-overlay ul li a:focus {
+  color: #f0f0f0;
+}
+
+/* Effects */
+body, html {
+  background: #ddd;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  background: #fff;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+}
+
+.container.overlay-open {
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+}
+
+.overlay-contentscale {
+  visibility: hidden;
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+  -webkit-transition: -webkit-transform 0.5s, visibility 0s 0.5s;
+  transition: transform 0.5s, visibility 0s 0.5s;
+}
+
+.overlay-contentscale.open {
+  visibility: visible;
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+}
+
+@media screen and (max-height: 30.5em) {
+  .search-overlay nav {
+    height: 70%;
+    font-size: 34px;
+  }
+  .search-overlay ul li {
+    min-height: 34px;
+  }
+  .search {
+    font-size: 34px;
+    min-height: 34px;
+  }
+}

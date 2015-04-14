@@ -1,0 +1,17 @@
+<template name="tabs">
+  {{#if isAndroid}}
+    {{#ionTabs style="android" class="tabs-background-positive tabs-color-light"}}
+      {{> ionTab title="Home" path="home" icon="android-home"}}
+      {{> ionTab title="Search" path="tabs.two" icon="android-search"}}
+      {{> ionTab title="All Drinks" path="allDrinks" icon="android-bar"}}
+      {{> ionTab title="Profile" path="tabs.four" icon="android-person"}}
+    {{/ionTabs}}
+  {{else}}
+    {{#ionTabs style="ios"}}
+      {{> ionTab title="Home" path="home" iconOff="ios-home-outline" iconOn="ios-home"}}
+      {{> ionTab title="Search" path="searchOverlay" iconOff="ios-search" iconOn="ios-search-strong" id="js-overlay-open"}}
+      {{> ionTab title="All Drinks" path="beer" iconOff="ios-pint-outline" iconOn="ios-pint"}}
+      {{> ionTab title="Profile" path="tabs.four" iconOff="ios-person-outline" iconOn="ios-person"}}
+    {{/ionTabs}}
+  {{/if}}
+</template>

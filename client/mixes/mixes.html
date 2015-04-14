@@ -1,0 +1,27 @@
+<template name="mixes">
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton}}
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Mixed Drink Selection</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear" data-ion-popover="_myPopover">
+      {{#if isAndroid}}
+        {{> ionIcon icon='android-more-vertical'}}
+      {{else}}
+        {{> ionIcon icon='more'}}
+      {{/if}}
+    </button>
+  {{/contentFor}}
+
+  {{> drinksTabs}}
+
+  {{#ionView class="top-tabs-view"}}
+    {{#ionContent}}
+
+    {{/ionContent}}
+  {{/ionView}}
+</template>
