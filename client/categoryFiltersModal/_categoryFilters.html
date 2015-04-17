@@ -1,0 +1,26 @@
+<template name="_categoryFilters">
+  {{#ionModal customTemplate=true}}
+    <div class="bar bar-header bar-stable">
+      <button type="button" class="button button-clear clear-all">Clear All</button>
+      <h2 class="title">Filters</h2>
+      <button data-dismiss="modal" type="button" class="button button-clear">
+        <i class="icon ion-ios-close-empty"></i>
+      </button>
+    </div>
+    <div class="content has-header overflow-scroll">
+      <div class="selected-categories {{isCategorySelected}}">
+        {{#if isCategorySelected}}
+          Selected filters: {{currentCategories}}
+        {{/if}}
+      </div>
+      <form class="filter-select">
+        {{#each category}}
+          <label class="checkbox">
+            <input type="checkbox" name="category" class="category-cb" value="{{this}}"/> 
+            <span class="category-name">{{this}}</span>
+          </label>
+        {{/each}}
+      </form>
+    </div>
+  {{/ionModal}}
+</template>

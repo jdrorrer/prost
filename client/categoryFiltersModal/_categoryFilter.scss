@@ -1,0 +1,49 @@
+.overflow-scroll {
+  overflow: auto;
+}
+
+.selected-categories {
+  margin: $base-fs;
+  opacity: 0;
+  transition: opacity 1s linear;
+  &.selected {
+    opacity: 1;
+  }
+}
+
+.filter-select {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: column wrap;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  opacity: 0.99;
+  width: 90%;
+  height: 400%;
+  .category-cb {
+    margin-left: 8px;  
+  }
+}
+
+.checkbox input .checkbox-icon {
+  display: inline-block;
+}
+
+.checkbox input:checked:before, 
+.checkbox input:checked + .checkbox-icon:before {
+  background-color: $quinary-color;
+  border-color: $quinary-color;
+}
+
+.checkbox input:checked + .category-name {
+  font-weight: $font-bold;
+}
+
+.category-name {
+  left: 54px;
+  position: absolute;
+  top: 12px;
+}

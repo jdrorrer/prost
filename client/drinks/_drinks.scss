@@ -1,0 +1,187 @@
+// .is-hidden {
+//   display: none;
+// }
+
+// .popover {
+//   height: 65px;
+// }
+
+// .popover-backdrop.active {
+//   background-color: transparent;
+// }
+
+span.back-text {
+  visibility: hidden;
+}
+
+.results-wrapper,
+.no-results,
+.loading-results {
+  @include respond-min(mid) {
+    margin: 0 auto;
+    width: 750px;
+  }
+}
+
+.search-input {
+  position: relative;
+  @include respond-min(mid) {
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 752px;
+  }
+  input {
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    border-bottom: 1px solid transparent;
+    font-size: $base-fs;
+    font-weight: $font-light;
+    padding: $base-fs*2;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    &:focus {
+      box-shadow: 0 0 10px $quinary-color;
+      border: 1px solid $quinary-color;
+    }
+  }
+}
+
+.search-input-icon {
+  left: 5px;
+  top: 19px;
+  position: absolute;
+  z-index: 9999;
+}
+
+.placeholder-icon:last-child {
+  padding-left: 8px; 
+}
+
+.press-enter {
+  color: #aaa;
+  font-size: $base-fs;
+  font-weight: $font-light;
+  right: 5px;
+  top: 21px;
+  position: absolute;
+}
+
+.category-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.category {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  color: #aaa;
+  font-size: $base-fs/1.75;
+  font-weight: $font-normal;
+  margin: 3px $base-fs/5;
+  padding: 0 $base-fs/4;
+  text-transform: uppercase;
+  transition: all 0.2s linear;
+  &.selected {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    color: white;
+  }
+  &:hover {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+.deal-tag {
+  color: $secondary-color;
+  font-size: 12px;
+  font-weight: $font-bold;
+  text-transform: uppercase;
+}
+
+.item-icons-right {
+  padding-right: 108px;
+}
+
+.drink-actions {
+  position: absolute;
+  height: 100%;
+  width: 108px;
+  float: right;
+  right: 0;
+  top: 0;
+  .favorite {
+    color: $quinary-color;
+    font-size: 28px;
+    position: absolute;
+    right: 54px;
+    top: 30px;
+    @include respond-min(mid) {
+      top: 30%;
+    }
+  }
+  .deal-price {
+    font-size: 12px;
+    position: absolute;
+    right: 15px;
+    text-decoration: line-through;
+    top: 10px;
+  }
+  .price {
+    background-color: $quinary-color;
+    border: 1px solid $quinary-color;
+    border-radius: 3px;
+    color: white;
+    font-size: 12px;
+    font-weight: $font-bold;
+    padding: 1px 4px;
+    position: absolute;
+    right: 10px;
+    top: 35px;
+    @include respond-min(mid) {
+      top: 35%;
+    }
+  }
+}
+
+.load-more {
+  margin-bottom: -1px;
+  position: relative;
+  @include respond-min(mid) {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 752px;
+    text-align: center;
+  }
+}
+
+.load-more-icon {
+  color: white;
+  left: calc(100%/2 - 70px);
+  position: absolute;
+  top: 15px;
+  @include respond-min(mid) {
+    left: calc(752px/2 - 75px);
+  }
+}
+
+.load-more-btn {
+  border: 1px solid $primary-color;
+  font-size: $base-fs;
+  font-weight: $font-light;
+  width: 100%;
+  @include respond-min(mid) {
+    width: 752px;
+  }
+}

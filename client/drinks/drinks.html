@@ -1,6 +1,6 @@
 <template name="drinks">
   {{#contentFor "headerButtonLeft"}}
-    {{>ionNavBackButton}}
+    {{>ionNavBackButton icon="ios-arrow-left"}}
   {{/contentFor}}
 
   {{#contentFor "headerTitle"}}
@@ -12,30 +12,74 @@
       {{#if isAndroid}}
         {{> ionIcon icon='android-more-vertical'}}
       {{else}}
-        {{> ionIcon icon='more'}}
+        {{> ionIcon icon='ios-more'}}
       {{/if}}
     </button>
   {{/contentFor}}
+  
+  <div class="search-container">
+    {{#ionView}}
+      {{#ionContent}}
+        <div class="search-input">
+          {{> esInput index="drinks" id="drink-search" placeholder="Search Drinks" allDocsOnEmpty=true}}
+          <i class="icon ion-ios-search placeholder-icon search-input-icon"></i>
+          {{#ifEsInputIsEmpty index="drinks" id="drink-search"}}
+            <!-- do nothing -->
+          {{else}}
+            <div class="press-enter">[Press Enter]</div>
+          {{/ifEsInputIsEmpty}}
+        </div>
 
-  {{#ionView}}
-    {{#ionContent}}
-      <div class="item-input-inset center">
-        <label class="item-input-wrapper">
-          <i class="icon ion-ios-search placeholder-icon"></i>
-          <input type="search" placeholder="Search Drinks">
-        </label>
-      </div>
-      {{#ionList}}
-        {{#each drink}}
-          {{#ionItem path="drink" data=myParams iconRight=true avatar=true}}
-            <img src="/images/drink-5.jpg" alt="drink-5"/>
-            <h2>{{name}} ${{price}}</h2>
-            <p>{{description}}</p>
-            {{>ionIcon icon="ios-arrow-right"}}
-          {{/ionItem}}
-        {{/each}}
-        <button class="load-more">Load More</button>
-      {{/ionList}}
-    {{/ionContent}}
-  {{/ionView}}
+        {{#ionList}}
+          {{#ifEsIsSearching index="drinks" id="drink-search"}}
+            <div class="loading-results">Loading...</div>
+          {{else}}
+            <div class="results-wrapper">
+              {{#esEach index="drinks" id="drink-search"}}
+                {{#ionItem path="checkout" data=myParams class="item-thumbnail-left item-icons-right"}}
+                  <img src="/images/drink-5.jpg" alt="drink-5"/>
+                  <h2>
+                    {{name}}
+                    {{#if isDeal}}
+                      <span class="deal-tag">Special!</span>
+                    {{/if}}
+                  </h2>
+                  <p>{{description}}</p>
+                  <div class="category-container">
+                    {{#each categories}}
+                      <span class="category {{currentCategories this}}">{{this}}</span>
+                    {{/each}}
+                  </div>
+                  <div class="drink-actions">
+                    {{>ionIcon icon="ios-heart-outline" class="favorite"}}
+                    <span class="deal-price">
+                      {{#if isDeal}}
+                        ${{price}}
+                      {{/if}}
+                    </span>
+                    <span class="price">
+                      {{#if isDeal}}
+                        ${{dealPrice}}
+                      {{else}}
+                        ${{price}}
+                      {{/if}}
+                    </span>
+                  </div>
+                {{/ionItem}}
+              {{/esEach}}
+            </div>
+            <div class="load-more">
+              <i class="icon ion-ios-reload load-more-icon"></i>
+              {{> esLoadMoreButton index="drinks" id="drink-search" class="load-more-btn"}}
+            </div>
+          {{/ifEsIsSearching}}
+
+          {{#ifEsHasNoResults index="drinks" id="drink-search"}}
+            <div class="no-results">No results found!</div>
+          {{/ifEsHasNoResults}}
+          
+        {{/ionList}}
+      {{/ionContent}}
+    {{/ionView}}
+  </div>
 </template>

@@ -35,6 +35,7 @@
 @import "client/layout/layout.scss"; 
 
 // Modules
+@import 'client/loading/loading.scss';
 @import 'client/home/home.scss';
 @import 'client/stores/stores.scss';
 @import 'client/store/store.scss';
@@ -42,6 +43,9 @@
 @import 'client/accounts/accounts.scss';
 @import 'client/drinksTabs/drinksTabs.scss';
 @import 'client/beer/beer.scss';
+@import 'client/drinks/drinks.scss';
+@import 'client/categoryFiltersModal/categoryFilter.scss';
+@import 'client/tabs/tabs.scss';
 // @import 'client/searchOverlay/searchOverlay.scss';
 
 // State

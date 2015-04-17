@@ -1,13 +1,13 @@
 .spinner {
   margin: 22% auto;
-  width: 4rem;
-  height: 4rem;
+  width: 2rem;
+  height: 2rem;
   position: relative;
 }
 
 .container1 > div, .container2 > div, .container3 > div {
-  width: 0.7rem;
-  height: 0.7rem;
+  width: 0.5rem;
+  height: 0.5rem;
   background-color: $primary-color;
 
   border-radius: 100%;

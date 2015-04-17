@@ -47,14 +47,14 @@ button {
   // border: none;
   color: #fff;
   padding: 1rem;
-  transition: background-color 0.4s linear;
+  transition: all 0.4s linear;
 }
 
 input[type="button"]:hover, 
 input[type="submit"]:hover,
 button:hover {
   background-color: $secondary-color;
-  border-color: none;
+  border-color: $secondary-color;
   color: #fff !important;
   cursor: pointer;
 }
