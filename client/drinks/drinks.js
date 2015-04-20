@@ -1,6 +1,8 @@
 Template.drinks.onCreated(function() {
   // this.drinks = new ReactiveVar(this.data);
   this.filters = new ReactiveVar([]);
+  this.heartIcon = new ReactiveVar('ion-ios-heart-outline');
+  this.currentItem = new ReactiveVar([]);
 });
 
 Template.drinks.helpers({
@@ -29,6 +31,19 @@ Template.drinks.helpers({
   },
   isDeal: function() {
     return this.deal;
+  },
+  favoriteIcon: function() {
+    var currentUser = Meteor.user();
+    var currentFavorite = Template.instance().currentItem.get();
+    if(currentFavorite === this._id) {
+      return Template.instance().heartIcon.get();  
+    } else {
+      if(_.contains(currentUser.favorites, this._id)) {
+        return 'ion-ios-heart';
+      } else {
+        return 'ion-ios-heart-outline';
+      }
+    }
   }
 });
 
@@ -65,7 +80,43 @@ Template.drinks.events({
       $('.filters .icon').removeClass('ion-ios-settings-strong').addClass('ion-ios-settings');
     }
 
+    EasySearch.changeLimit('drinks', 10);
+
     instance.triggerSearch();
+  },
+  'mouseenter .favorite': function(e) {
+    Template.instance().currentItem.set(this._id);
+    Template.instance().heartIcon.set('ion-ios-heart');
+  },
+  'mouseleave .favorite': function(e) {
+    Template.instance().currentItem.set([]);
+    Template.instance().heartIcon.set('ion-ios-heart-outline');
+  },
+  'click .price': function(e) {
+    e.preventDefault();
+  },
+  'click .favorite': function(e) {
+    e.preventDefault();
+    var currentUser = Meteor.user();
+    var currentFavorite = Template.instance().currentItem.get();
+    console.log(currentUser.favorites);
+    if(_.contains(currentUser.favorites, currentFavorite)) {
+      Meteor.call('removeFavorite', currentFavorite, function(err, data) {
+        if(err) {
+          console.log(err);
+        } else {
+          console.log(data);
+        }
+      });
+    } else {
+      Meteor.call('addFavorite', currentFavorite, function(err, data) {
+        if(err) {
+          console.log(err);
+        } else {
+          console.log(data);
+        }
+      });
+    } 
   }
   // 'change input#drink-search': function() {
   //   var instance = EasySearch.getComponentInstance({

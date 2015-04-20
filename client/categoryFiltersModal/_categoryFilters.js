@@ -59,6 +59,8 @@ Template._categoryFilters.events({
       $('.filters .icon').removeClass('ion-ios-settings-strong').addClass('ion-ios-settings');
     }
 
+    EasySearch.changeLimit('drinks', 10);
+
     instance.triggerSearch();
   },
   'click .clear-all': function() {
@@ -77,6 +79,8 @@ Template._categoryFilters.events({
       EasySearch.changeProperty('drinks', 'filteredCategory', []);
 
       $('.filters .icon').removeClass('ion-ios-settings-strong').addClass('ion-ios-settings');
+
+      EasySearch.changeLimit('drinks', 10);
 
       instance.triggerSearch();
     }

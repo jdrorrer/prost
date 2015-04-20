@@ -130,6 +130,9 @@ span.back-text {
     @include respond-min(mid) {
       top: 30%;
     }
+    &:hover {
+      cursor: pointer;
+    }
   }
   .deal-price {
     font-size: 12px;

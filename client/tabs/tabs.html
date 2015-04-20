@@ -1,17 +1,17 @@
 <template name="tabs">
   {{#if isAndroid}}
     {{#ionTabs style="android"}}
-      {{> ionTab title="Favorites" path="home" icon="heart"}}
-      {{> ionTab title="Specials" path="tabs.two" icon="pricetag"}}
-      {{> ionTab title="New Drinks" path="allDrinks" icon="beer"}}
+      {{> ionTab title="Favorites" path="home" icon="heart" class="favorites"}}
+      {{> ionTab title="Specials" path="tabs.two" icon="pricetag" class="specials"}}
+      {{> ionTab title="All Drinks" path="drinks" icon="beer" class="all-drinks"}}
       {{> ionTab title="Popular" path="tabs.four" icon="flash"}}
       {{> ionTab title="Filters" icon="android-options" class="filters"}}
     {{/ionTabs}}
   {{else}}
     {{#ionTabs style="ios"}}
-      {{> ionTab title="Favorites" path="home" iconOff="ios-heart-outline" iconOn="ios-heart"}}
-      {{> ionTab title="Specials" path="searchOverlay" iconOff="ios-pricetag-outline" iconOn="ios-pricetag" id="js-overlay-open"}}
-      {{> ionTab title="New Drinks" path="beer" iconOff="ios-pint-outline" iconOn="ios-pint"}}
+      {{> ionTab title="Favorites" path="home" iconOff="ios-heart-outline" iconOn="ios-heart" class="favorites"}}
+      {{> ionTab title="Specials" path="searchOverlay" iconOff="ios-pricetag-outline" iconOn="ios-pricetag" class="specials"}}
+      {{> ionTab title="All Drinks" path="drinks" iconOff="ios-pint-outline" iconOn="ios-pint" class="all-drinks"}}
       {{> ionTab title="Popular" path="tabs.four" iconOff="ios-bolt-outline" iconOn="ios-bolt"}}
       <div class="noti-container">
         {{> ionTab title="Filters" iconOff="ios-settings" iconOn="ios-settings-strong" class="filters"}}

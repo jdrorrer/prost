@@ -51,13 +51,13 @@
                     {{/each}}
                   </div>
                   <div class="drink-actions">
-                    {{>ionIcon icon="ios-heart-outline" class="favorite"}}
+                    <i class="icon favorite {{favoriteIcon}}"></i>
                     <span class="deal-price">
                       {{#if isDeal}}
                         ${{price}}
                       {{/if}}
                     </span>
-                    <span class="price">
+                    <span class="price" data-ion-modal="_checkout" data-id="{{myParams.drinkSlug}}">
                       {{#if isDeal}}
                         ${{dealPrice}}
                       {{else}}

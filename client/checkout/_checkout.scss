@@ -1,0 +1,155 @@
+.form-container {
+  background-color: white;
+  position: relative;
+}
+
+.drink-display {
+  width: 96%;
+  @include respond-min(mid) {
+    width: 100%;
+  }
+}
+
+.drink-image {
+  left: 0px !important;
+  margin: $base-fs/2 !important;
+}
+
+.order-description {
+  h2 {
+    color: $quinary-color;
+    font-weight: $font-light;
+    // text-transform: uppercase;
+  }
+  h2, p {
+    margin-left: $base-fs !important;
+    margin-right: $base-fs !important;
+    @include respond-min(mid) {
+      margin-left: $base-fs/2 !important;
+      margin-top: $base-fs/2 !important;
+    }
+  }
+}
+
+.order-form {
+  border: none;
+}
+
+.control-label {
+  font-weight: $font-light;
+}
+
+.form-control {
+  background-color: #fafafa;
+  border-radius: 5px;
+  &:focus {
+    background-color: white;
+    border: 1px solid $quinary-color;
+  }
+}
+
+.form-group {
+  margin: $base-fs/2;
+  select {
+    padding: $base-fs/2;
+  }
+}
+
+.order-divider {
+  background-color: white;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: $base-fs/2;
+  margin-left: 0px;
+  overflow: visible;
+  padding-left: 0px;
+}
+
+.divider-title {
+  font-weight: $font-normal;
+  margin: $base-fs/2 auto;
+  padding: $base-fs/1.5 0;
+  text-transform: uppercase;
+}
+
+.order-step {
+  border: 1px solid $secondary-color;
+  border-radius: 50%;
+  color: $secondary-color;
+  font-weight: $font-normal;
+  height: 15px;
+  margin-right: $base-fs/2;
+  padding: 7px 12px;
+  width: 15px;
+}
+
+.times-icon {
+  bottom: 0;
+  position: absolute;
+  right: 0;
+  text-align: center;
+}
+
+.order-price {
+  bottom: 25%;
+  position: absolute;  
+  right: 0;
+}
+
+.order-detail {
+  padding-right: $base-fs;
+  text-align: right;
+}
+
+.order-detail-value {
+  margin-right: $base-fs;
+  text-align: right;
+}
+
+.quantity {
+  text-indent: $base-fs;
+}
+
+.total-row {
+  font-weight: $font-bold;
+}
+
+.af-radio-group .radio {
+  display: inline;
+  margin-right: $base-fs;
+}
+
+.info-icon {
+  color: #aaa;
+  position: absolute;
+  right: 0;
+  top: 0;
+  &:hover {
+    cursor: pointer;
+    color: $quinary-color;
+  }
+}
+
+.secure-payment {
+  color: #aaa;
+  font-size: $base-fs;
+  font-weight: $font-light;
+  float: right;
+  margin: $base-fs;
+  .secure-icon {
+    font-size: $base-fs*1.5;
+  }
+  .secure-text {
+    vertical-align: text-bottom;
+  }
+}
+
+.buy-btn {
+  border: none;
+  width: 100%;
+}
+
+.popup-buttons .button.button-positive {
+  background-color: $quinary-color;
+  border-color: $quinary-color;
+}
