@@ -11,7 +11,6 @@ Template._checkout.onCreated(function() {
 
 Template._checkout.helpers({
   drink: function() {
-    // console.log(Template.instance().data);
     return Template.instance().drink;
   },
   totalBeforeTax: function() {
