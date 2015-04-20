@@ -24,7 +24,12 @@ Template.tabs.events({
     e.preventDefault();
 
     EasySearch.changeProperty('drinks', 'filteredSpecials', []);
-    EasySearch.changeProperty('drinks', 'filteredCategory', []);
+
+    if(typeof filterCategories !== 'undefined' && filterCategories.length > 0) {
+      EasySearch.changeProperty('drinks', 'filteredCategory', filterCategories);
+    } else {
+      EasySearch.changeProperty('drinks', 'filteredCategory', []);  
+    }
 
     var instance = EasySearch.getComponentInstance({
       index: 'drinks',
@@ -51,7 +56,12 @@ Template.tabs.events({
     e.preventDefault();
 
     EasySearch.changeProperty('drinks', 'filteredFavorites', []);
-    EasySearch.changeProperty('drinks', 'filteredCategory', []);
+    
+    if(typeof filterCategories !== 'undefined' && filterCategories.length > 0) {
+      EasySearch.changeProperty('drinks', 'filteredCategory', filterCategories);
+    } else {
+      EasySearch.changeProperty('drinks', 'filteredCategory', []);  
+    }
 
     var instance = EasySearch.getComponentInstance({
       index: 'drinks',
@@ -79,9 +89,14 @@ Template.tabs.events({
       id: 'drink-search'
     });
 
-    EasySearch.changeProperty('drinks', 'filteredCategory', []);
     EasySearch.changeProperty('drinks', 'filteredFavorites', []);
     EasySearch.changeProperty('drinks', 'filteredSpecials', []);
+
+    if(typeof filterCategories !== 'undefined' && filterCategories.length > 0) {
+      EasySearch.changeProperty('drinks', 'filteredCategory', filterCategories);
+    } else {
+      EasySearch.changeProperty('drinks', 'filteredCategory', []);  
+    }
 
     EasySearch.changeLimit('drinks', 10);
 
