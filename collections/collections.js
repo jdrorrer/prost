@@ -133,15 +133,15 @@ EasySearch.createSearchIndex('drinks', {
     var query = EasySearch.getSearcher(this.use).defaultQuery(this, searchString);
 
     // filter for categories if set
-    if (this.props.filteredCategory.length > 0) {
+    if (typeof this.props.filteredCategory !== 'undefined' && this.props.filteredCategory.length > 0) {
       query.categories = { $all: this.props.filteredCategory };
     }
 
-    if(this.props.filteredFavorites.length > 0) {
+    if(typeof this.props.filteredFavorites !== 'undefined' && this.props.filteredFavorites.length > 0) {
       query._id = { $in: this.props.filteredFavorites };
     }
 
-    if(this.props.filteredSpecials.length > 0) {
+    if(typeof this.props.filteredSpecials !== 'undefined' && this.props.filteredSpecials.length > 0) {
       query._id = { $in: this.props.filteredSpecials };
     }
 

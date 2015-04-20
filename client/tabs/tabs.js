@@ -24,6 +24,7 @@ Template.tabs.events({
     e.preventDefault();
 
     EasySearch.changeProperty('drinks', 'filteredSpecials', []);
+    EasySearch.changeProperty('drinks', 'filteredCategory', []);
 
     var instance = EasySearch.getComponentInstance({
       index: 'drinks',
@@ -35,7 +36,12 @@ Template.tabs.events({
 
     // console.log(favorites[0]);
 
-    EasySearch.changeProperty('drinks', 'filteredFavorites', favorites[0]);
+    if(typeof favorites !== 'undefined' && favorites.length > 0) {
+      EasySearch.changeProperty('drinks', 'filteredFavorites', favorites[0]);
+    } else {
+      // Show no results, i.e. filter out every category
+      EasySearch.changeProperty('drinks', 'filteredCategory', categories);
+    }
 
     EasySearch.changeLimit('drinks', 10);
 
@@ -45,6 +51,7 @@ Template.tabs.events({
     e.preventDefault();
 
     EasySearch.changeProperty('drinks', 'filteredFavorites', []);
+    EasySearch.changeProperty('drinks', 'filteredCategory', []);
 
     var instance = EasySearch.getComponentInstance({
       index: 'drinks',
@@ -55,7 +62,12 @@ Template.tabs.events({
 
     // console.log(specials);
 
-    EasySearch.changeProperty('drinks', 'filteredSpecials', specials);
+    if(typeof specials !== 'undefined' && specials.length > 0) {
+      EasySearch.changeProperty('drinks', 'filteredSpecials', specials);
+    } else {
+      // Show no results, i.e. filter out every category
+      EasySearch.changeProperty('drinks', 'filteredCategory', categories);
+    }
 
     EasySearch.changeLimit('drinks', 10);
 

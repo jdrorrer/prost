@@ -20,8 +20,8 @@ Template._categoryFilters.helpers({
   currentCategories: function() {
     return Session.get('selectedCategories').join(', ');
   },
-  isCategorySelected: function(name) {
-    if(Session.get('selectedCategories').length) {
+  isCategorySelected: function() {
+    if(typeof Session.get('selectedCategories') !== 'undefined' && Session.get('selectedCategories').length > 0) {
       return 'selected';
     }
   }
@@ -51,7 +51,7 @@ Template._categoryFilters.events({
     // If there are any filters, apply them using EasySearch,
     // otherwise, include all categories, i.e. no filters
     // Also, if filters are set, change filters tab to let the user know
-    if(filterCategories.length) {
+    if(typeof filterCategories !== 'undefined' && filterCategories.length > 0) {
       EasySearch.changeProperty('drinks', 'filteredCategory', filterCategories);
       $('.filters .icon').removeClass('ion-ios-settings').addClass('ion-ios-settings-strong');
     } else {
@@ -69,7 +69,7 @@ Template._categoryFilters.events({
       id: 'drink-search'
     });
 
-    if(filterCategories.length) {
+    if(typeof filterCategories !== 'undefined' && filterCategories.length > 0) {
       for(var i=0; i < filterCategories.length; i++) {
         var $categoryCheckBox = $(".category-cb[value='" + filterCategories[i] + "']");
         $categoryCheckBox.prop('checked', false);

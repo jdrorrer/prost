@@ -38,8 +38,12 @@ Template.drinks.helpers({
     if(currentFavorite === this._id) {
       return Template.instance().heartIcon.get();  
     } else {
-      if(_.contains(currentUser.favorites, this._id)) {
-        return 'ion-ios-heart';
+      if(currentUser) {
+        if(_.contains(currentUser.favorites, this._id)) {
+          return 'ion-ios-heart';
+        } else {
+          return 'ion-ios-heart-outline';
+        }
       } else {
         return 'ion-ios-heart-outline';
       }
@@ -72,7 +76,7 @@ Template.drinks.events({
     // If there are any filters, apply them using EasySearch,
     // otherwise, include all categories, i.e. no filters
     // Also, if filters are set, change filters tab to let the user know
-    if(filterCategories.length) {
+    if(typeof filterCategories !== 'undefined' && filterCategories.length > 0) {
       EasySearch.changeProperty('drinks', 'filteredCategory', filterCategories);
       $('.filters .icon').removeClass('ion-ios-settings').addClass('ion-ios-settings-strong');
     } else {
