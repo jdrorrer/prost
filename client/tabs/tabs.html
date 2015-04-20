@@ -5,7 +5,10 @@
       {{> ionTab title="Specials" path="tabs.two" icon="pricetag" class="specials"}}
       {{> ionTab title="All Drinks" path="drinks" icon="beer" class="all-drinks"}}
       {{> ionTab title="Popular" path="tabs.four" icon="flash"}}
-      {{> ionTab title="Filters" icon="android-options" class="filters"}}
+      <div class="noti-container">
+        {{> ionTab title="Filters" icon="android-options" class="filters"}}
+        <div class="{{notiBubble}}">{{notiCount}}</div>
+      </div>
     {{/ionTabs}}
   {{else}}
     {{#ionTabs style="ios"}}

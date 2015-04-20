@@ -1,7 +1,11 @@
 <template name="drinks">
-  {{#contentFor "headerButtonLeft"}}
-    {{>ionNavBackButton icon="ios-arrow-left"}}
-  {{/contentFor}}
+  {{#if isAndroid}}
+    <!-- Don't show the back button for Android -->
+  {{else}}
+    {{#contentFor "headerButtonLeft"}}
+      {{>ionNavBackButton icon="ios-arrow-left"}}
+    {{/contentFor}}
+  {{/if}}
 
   {{#contentFor "headerTitle"}}
     <h1 class="title">Drink Menu</h1>

@@ -53,10 +53,14 @@ Template._categoryFilters.events({
     // Also, if filters are set, change filters tab to let the user know
     if(typeof filterCategories !== 'undefined' && filterCategories.length > 0) {
       EasySearch.changeProperty('drinks', 'filteredCategory', filterCategories);
-      $('.filters .icon').removeClass('ion-ios-settings').addClass('ion-ios-settings-strong');
+      if(!Platform.isAndroid()) {
+        $('.filters .icon').removeClass('ion-ios-settings').addClass('ion-ios-settings-strong');
+      }
     } else {
       EasySearch.changeProperty('drinks', 'filteredCategory', []);
-      $('.filters .icon').removeClass('ion-ios-settings-strong').addClass('ion-ios-settings');
+      if(!Platform.isAndroid()) {
+        $('.filters .icon').removeClass('ion-ios-settings-strong').addClass('ion-ios-settings');  
+      }
     }
 
     EasySearch.changeLimit('drinks', 10);
@@ -78,8 +82,10 @@ Template._categoryFilters.events({
       Session.set('selectedCategories', filterCategories);
       EasySearch.changeProperty('drinks', 'filteredCategory', []);
 
-      $('.filters .icon').removeClass('ion-ios-settings-strong').addClass('ion-ios-settings');
-
+      if(!Platform.isAndroid()) {
+        $('.filters .icon').removeClass('ion-ios-settings-strong').addClass('ion-ios-settings');
+      }
+      
       EasySearch.changeLimit('drinks', 10);
 
       instance.triggerSearch();

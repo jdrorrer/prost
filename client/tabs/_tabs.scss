@@ -24,3 +24,24 @@
         right: calc(150px/2 - 25px);
     }
 }
+
+// Fixes for Android tabs
+.nav-view-transition-android {
+  .tabs-top.tabs-striped .tab-item.active {
+    padding-top: 0px;
+    .icon {
+        padding-top: 2px;
+    }
+  }
+
+  .tabs-top.tabs-striped .tab-item {
+    font-size: 10px;
+    line-height: 14px;
+    padding-top: 0px;
+    text-align: center;
+    vertical-align: text-bottom;
+    .icon {
+        padding-top: 2px;
+    }
+  }
+}

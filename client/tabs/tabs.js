@@ -1,5 +1,8 @@
 Template.tabs.onRendered(function() {
   $('a.filters').attr("data-ion-modal","_categoryFilters");
+  if(Platform.isAndroid()) {
+    $('.tabs-icon-left').removeClass('tabs-icon-left').addClass('tabs-icon-top');
+  }
 });
 
 Template.tabs.helpers({
