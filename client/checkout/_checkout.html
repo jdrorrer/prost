@@ -1,0 +1,114 @@
+<template name="_checkout">
+  {{#ionModal customTemplate=true}}
+  <!-- {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton icon="ios-arrow-left"}}
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Checkout</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear" data-ion-popover="_myPopover">
+      {{#if isAndroid}}
+        {{> ionIcon icon='android-more-vertical'}}
+      {{else}}
+        {{> ionIcon icon='ios-more'}}
+      {{/if}}
+    </button>
+  {{/contentFor}} -->
+
+    <div class="bar bar-header bar-stable">
+      <!-- <button type="button" class="button button-clear clear-all">Clear All</button> -->
+      <h2 class="title">Checkout</h2>
+      <button data-dismiss="modal" type="button" class="button button-clear">
+        <i class="icon ion-ios-close-empty"></i>
+      </button>
+    </div>
+
+    <div class="content has-header overflow-scroll">
+      <div class="form-container responsive-lg">
+        {{#autoForm collection="Orders" id="orderCheckoutForm" type="insert"}}
+          <fieldset class="order-form">
+            <div class="item item-divider order-divider">
+              <h3 class="title divider-title">
+                <span class="order-step">1</span> Your Order Details
+              </h3>
+            </div>
+            <div class="row drink-display responsive-md">
+              <img src="/images/drink-5.jpg" alt="drink-5" height="100%" width="100%" class="full-image col col-50 drink-image"/>
+              <div class="col order-description">
+                <h2>{{drink.name}}</h2>
+                <p>{{drink.description}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col col-offset-50"></div>
+              <div class="col col-20">{{> afQuickField name='quantity' defaultValue=1 class="quantity"}}</div>
+              <div class="col col-10">{{> ionIcon icon="ios-close-empty" class="times-icon"}}</div>
+              <div class="col col-10 order-detail-value">
+                <span class="order-price">
+                  {{#if drink.deal}}
+                    ${{drink.dealPrice}}
+                  {{else}}
+                    ${{drink.price}}
+                  {{/if}}
+                </span>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col col-offset-50"></div>
+              <div class="col col-25 order-detail">Total before tax: </div>
+              <div class="col col-10 order-detail-value">
+                ${{totalBeforeTax}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col col-offset-50"></div>
+              <div class="col col-25 order-detail">Tax: </div>
+              <div class="col col-10 order-detail-value">
+                ${{tax}}
+              </div>
+            </div>
+            <div class="row total-row">
+              <div class="col col-offset-50"></div>
+              <div class="col col-25 order-detail">Order Total: </div>
+              <div class="col col-10 order-detail-value">
+                ${{total}}
+              </div>
+            </div>
+            <div class="item item-divider order-divider">
+              <h3 class="title divider-title">
+                <span class="order-step">2</span> Your Payment Information
+              </h3>
+            </div>
+            {{> afQuickField name="paymentOptions" id="paymentOptions" schema=Orders defaultValue="credit card"}}
+            {{#if afFieldValueIs name="paymentOptions" value="credit card"}}
+              <div class="row responsive-md">
+                <div class="col col-50 card-detail">{{> afQuickField name="nameOnCard" placeholder="Name on your card"}}</div>
+                <div class="col col-50 card-detail">{{> afQuickField name="cardNumber" placeholder="Card number"}}</div>
+              </div>
+              <div class="row responsive-sm">
+                <div class="col col-25">{{> afQuickField name="cardZip" placeholder="Zip/Postal"}}</div>
+                <div class="col col-25">
+                  {{> afQuickField name="cardCVV" placeholder="CVV"}}
+                  {{> ionIcon icon="ios-information-outline" class="info-icon" data-action="cvvPopup"}}
+                </div>
+                <div class="col col-25">{{> afQuickField name="cardExpMonth" defaultValue=1}}</div>
+                <div class="col col-25">{{> afQuickField name="cardExpYear" id="cardExpYear" schema=Orders defaultValue=2015}}</div>
+              </div>      
+            {{else}}
+              When you click "Buy" below we'll take you to Stripe's site to set up your billing information.
+            {{/if}}
+          </fieldset>
+          <div class="secure-payment">
+            {{> ionIcon icon="ios-locked-outline" class="secure-icon"}}
+            <span class="secure-text">Secure Payment</span>
+          </div>
+          <button type="submit" class="btn btn-primary buy-btn">Buy</button>
+        {{/autoForm}}
+      </div>
+    </div>
+  {{/ionModal}}
+</template>

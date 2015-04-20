@@ -14,3 +14,5 @@ categories = [
   "Scotch", "Irish Whiskey", "Canadian Whiskey", "Well", "Premium"
 ];
 filterCategories = [];
+
+filterSpecials = [];
