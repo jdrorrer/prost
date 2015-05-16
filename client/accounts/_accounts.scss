@@ -2,9 +2,33 @@
   .item {
     border: none;
     padding: 0px 16px;
+    &:nth-child(1) {
+      padding-top: 8px;
+    }
+    &:nth-child(3) {
+      padding-bottom: 8px;
+    }
 
     .at-social-btn {
       margin: 5px 0px;
     }
+  }
+}
+
+.item-divider {
+  background-color: transparent;
+}
+
+.at-form {
+  @include respond-min(mid) {
+    margin: 0 auto;
+    max-width: 500px;
+  }
+}
+
+#at-pwd-form {
+  background-color: white;
+  input {
+    width: 100%;
   }
 }

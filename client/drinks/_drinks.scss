@@ -128,6 +128,9 @@ span.back-text {
     right: 15px;
     text-decoration: line-through;
     top: 10px;
+    &:hover {
+      cursor: pointer;
+    }
   }
   .price {
     background-color: $quinary-color;
@@ -140,6 +143,10 @@ span.back-text {
     position: absolute;
     right: 10px;
     top: 35px;
+    &:hover {
+      cursor: pointer;
+    }
+    
     @include respond-min(mid) {
       top: 35%;
     }

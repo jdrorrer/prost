@@ -1,22 +1,28 @@
 <template name="accounts">
-  {{#contentFor "headerButtonLeft"}}
-    {{>ionNavBackButton path="index"}}
-  {{/contentFor}}
-  {{#contentFor "headerTitle"}}
-    <h1 class="title">Sign In/Up</h1>
-  {{/contentFor}}
+  {{#if isAndroid}}
+    <!-- Don't show the back button for Android -->
+  {{else}}
+    {{#contentFor "headerButtonLeft"}}
+      {{>ionNavBackButton icon="ios-arrow-left"}}
+    {{/contentFor}}
+  {{/if}}
+  <div class="login-container">
+    {{#contentFor "headerTitle"}}
+      <h1 class="title">Prost Sign In/Up</h1>
+    {{/contentFor}}
 
-  {{#ionView}}
-    {{#ionContent}}
-      {{#if currentUser}}
-        <div class="padding">
-          <button class="button button-positive button-block" data-action="logout">Log Out</button>
-        </div>
-      {{else}}
-        {{> atForm}}
-      {{/if}}
-    {{/ionContent}}
-  {{/ionView}}
+    {{#ionView}}
+      {{#ionContent}}
+        {{#if currentUser}}
+          <div class="padding">
+            <button class="button button-positive button-block" data-action="logout">Log Out</button>
+          </div>
+        {{else}}
+          {{> atForm}}
+        {{/if}}
+      {{/ionContent}}
+    {{/ionView}}
+  </div>
 </template>
 
 <!-- <body>
